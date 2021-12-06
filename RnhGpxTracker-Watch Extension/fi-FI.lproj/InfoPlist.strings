@@ -1,10 +1,9 @@
 /*
   InfoPlist.strings
-  OpenGpxTracker
-
+  RnhGpxTracker
   Created by Phiilman on 28.03.20.
+  Update by Ed Cafferata 2021/12/06.
 */
-
 NSLocationAlwaysAndWhenInUseUsageDescription = "Sijaintitietoa käytetään ainoastaan sijainnin esittämiseen kartalla. Mene puhelimen asetuksiin ja sieltä GPX Trackerin asetuksiin ja salli sijainnin käyttö aina, jotta sijainti tallentuu myös ohjelman ollessa taustalla.";
 NSLocationAlwaysUsageDescription = "Sijaintitieto sallittava aina, jotta ohjelma tallentaa suoritusta myös ohjelman ollessa taustalla.";
 NSLocationUsageDescription = "Sijaintitieto tarvitaan jotta GPX ja POI, saadaan luotua.";
