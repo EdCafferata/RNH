@@ -1,11 +1,10 @@
 /* 
   InfoPlist.strings
-  OpenGpxTracker
-
+  RnhGpxTracker
   Created by Kurt Höblinger on 21.08.19.
+  Update by Ed Cafferata 2021/12/06.
   Copyright © 2019 TransitBox. All rights reserved.
 */
-
 NSLocationAlwaysAndWhenInUseUsageDescription = "Location is only used to display your position in the map. Select always allow to track your position even if the app is in background.";
 NSLocationAlwaysUsageDescription = "Location is needed to create the GPX track even when the app is in background.";
 NSLocationUsageDescription = "Location is needed to create GPX and add POIs";
