@@ -1,16 +1,13 @@
-//
 //  InterfaceController.swift
-//  OpenGpxTracker-Watch Extension
-//
+//  RnhGpxTracker-Watch Extension
 //  Created by Vincent on 5/2/19.
+//  Update by Ed Cafferata 2021/12/06.
 //  Copyright © 2019 TransitBox. All rights reserved.
 //
-
 import WatchKit
 import MapKit
 import CoreLocation
 import CoreGPX
-
 //Button colors
 let kPurpleButtonBackgroundColor: UIColor =  UIColor(red: 146.0/255.0, green: 166.0/255.0, blue: 218.0/255.0, alpha: 0.90)
 let kGreenButtonBackgroundColor: UIColor = UIColor(red: 142.0/255.0, green: 224.0/255.0, blue: 102.0/255.0, alpha: 0.90)
@@ -19,23 +16,19 @@ let kBlueButtonBackgroundColor: UIColor = UIColor(red: 74.0/255.0, green: 144.0/
 let kDisabledBlueButtonBackgroundColor: UIColor = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 0.10)
 let kDisabledRedButtonBackgroundColor: UIColor =  UIColor(red: 244.0/255.0, green: 94.0/255.0, blue: 94.0/255.0, alpha: 0.10)
 let kWhiteBackgroundColor: UIColor = UIColor(red: 254.0/255.0, green: 254.0/255.0, blue: 254.0/255.0, alpha: 0.90)
-
 //Accesory View buttons tags
 let kDeleteWaypointAccesoryButtonTag = 666
 let kEditWaypointAccesoryButtonTag = 333
-
 let kNotGettingLocationText = NSLocalizedString("NO_LOCATION", comment: "no comment")
 let kUnknownAccuracyText = "±···"
 let kUnknownSpeedText = "·.··"
 let kUnknownAltitudeText = "···"
-
 /// Size for small buttons
 let kButtonSmallSize: CGFloat = 48.0
 /// Size for large buttons
 let kButtonLargeSize: CGFloat = 96.0
 /// Separation between buttons
 let kButtonSeparation: CGFloat = 6.0
-
 /// Upper limits threshold (in meters) on signal accuracy.
 let kSignalAccuracy6 = 6.0
 let kSignalAccuracy5 = 11.0
@@ -43,7 +36,6 @@ let kSignalAccuracy4 = 31.0
 let kSignalAccuracy3 = 51.0
 let kSignalAccuracy2 = 101.0
 let kSignalAccuracy1 = 201.0
-
 ///
 /// Main View Controller of the Watch Application. It is loaded when the application is launched
 ///
@@ -51,7 +43,6 @@ let kSignalAccuracy1 = 201.0
 ///
 ///
 class InterfaceController: WKInterfaceController {
-
     @IBOutlet var newPinButton: WKInterfaceButton!
     @IBOutlet var trackerButton: WKInterfaceButton!
     @IBOutlet var saveButton: WKInterfaceButton!
@@ -63,30 +54,24 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var coordinatesLabel: WKInterfaceLabel!
     @IBOutlet var altitudeLabel: WKInterfaceLabel!
     @IBOutlet var speedLabel: WKInterfaceLabel!
-
     /// Location Manager
     let locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.requestAlwaysAuthorization()
-        
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.distanceFilter = 2 //meters
         manager.allowsBackgroundLocationUpdates = true
         return manager
     }()
-    
     /// Preferences loader
     let preferences = Preferences.shared
-    
     /// Underlying class that handles background stuff
     let map = GPXMapView() // not even a map view. Considering renaming
-    
     //Status Vars
     var stopWatch = StopWatch()
     var lastGpxFilename: String = ""
     var wasSentToBackground: Bool = false //Was the app sent to background
     var isDisplayingLocationServicesDenied: Bool = false
-    
     /// Does the 'file' have any waypoint?
     var hasWaypoints: Bool = false {
         /// Whenever it is updated, if it has waypoints it sets the save and reset button
@@ -97,7 +82,6 @@ class InterfaceController: WKInterfaceController {
             }
         }
     }
-    
     // Signal accuracy images
     let signalImage0 = UIImage(named: "signal0")
     let signalImage1 = UIImage(named: "signal1")
@@ -106,20 +90,15 @@ class InterfaceController: WKInterfaceController {
     let signalImage4 = UIImage(named: "signal4")
     let signalImage5 = UIImage(named: "signal5")
     let signalImage6 = UIImage(named: "signal6")
-    
     /// Defines the different statuses regarding tracking current user location.
     enum GpxTrackingStatus {
-        
         /// Tracking has not started or map was reset
         case notStarted
-        
         /// Tracking is ongoing
         case tracking
-        
         /// Tracking is paused (the map has some contents)
         case paused
     }
-    
     /// Tells what is the current status of the Map Instance.
     var gpxTrackingStatus: GpxTrackingStatus = GpxTrackingStatus.notStarted {
         didSet {
@@ -136,14 +115,10 @@ class InterfaceController: WKInterfaceController {
                 //reset clock
                 stopWatch.reset()
                 timeLabel.setText(stopWatch.elapsedTimeString)
-                
                 map.reset() //reset gpx logging
                 lastGpxFilename = "" //clear last filename, so when saving it appears an empty field
-                
                 totalTrackedDistanceLabel.setText(map.totalTrackedDistance.toDistance(useImperial: preferences.useImperial))
-                
                 //currentSegmentDistanceLabel.distance = (map.currentSegmentDistance)
-                
                 /*
                  // XXX Left here for reference
                  UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
@@ -153,7 +128,6 @@ class InterfaceController: WKInterfaceController {
                  println("finished animation start tracking")
                  })
                  */
-                
             case .tracking:
                 print("switched to tracking mode")
                 // set trackerButton to allow Pause
@@ -164,7 +138,6 @@ class InterfaceController: WKInterfaceController {
                 resetButton.setBackgroundColor(kRedButtonBackgroundColor)
                 // start clock
                 self.stopWatch.start()
-                
             case .paused:
                 print("switched to paused mode")
                 // set trackerButton to allow Resume
@@ -180,22 +153,17 @@ class InterfaceController: WKInterfaceController {
             }
         }
     }
-    
     /// Editing Waypoint Temporal Reference
     var lastLocation: CLLocation? //Last point of current segment.
-
     override func awake(withContext context: Any?) {
         print("InterfaceController:: awake")
         super.awake(withContext: context)
-
         totalTrackedDistanceLabel.setText( 0.00.toDistance(useImperial: preferences.useImperial))
-        
         if gpxTrackingStatus == .notStarted {
             trackerButton.setBackgroundColor(kGreenButtonBackgroundColor)
             newPinButton.setBackgroundColor(kWhiteBackgroundColor)
             saveButton.setBackgroundColor(kDisabledRedButtonBackgroundColor)
             resetButton.setBackgroundColor(kDisabledBlueButtonBackgroundColor)
-            
             coordinatesLabel.setText(kNotGettingLocationText)
             signalAccuracyLabel.setText(kUnknownAccuracyText)
             altitudeLabel.setText(kUnknownAltitudeText)
@@ -203,21 +171,16 @@ class InterfaceController: WKInterfaceController {
             signalImageView.setImage(signalImage0)
         }
     }
-
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
          print("InterfaceController:: willActivate")
         super.willActivate()
         self.setTitle(NSLocalizedString("GPX_TRACKER", comment: "no comment"))
-        
         stopWatch.delegate = self
-        
         locationManager.delegate = self
         checkLocationServicesStatus()
         locationManager.startUpdatingLocation()
-        
     }
-    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
@@ -228,7 +191,6 @@ class InterfaceController: WKInterfaceController {
             locationManager.stopUpdatingLocation()
         }
     }
-
     ///
     /// Main Start/Pause Button was tapped.
     ///
@@ -245,9 +207,7 @@ class InterfaceController: WKInterfaceController {
             //set to tracking
             gpxTrackingStatus = .tracking
         }
-        
     }
-    
     ///
     /// Add Pin (waypoint) Button was tapped.
     ///
@@ -261,9 +221,7 @@ class InterfaceController: WKInterfaceController {
             print("Adding waypoint at \(currentCoordinates)")
             self.hasWaypoints = true
         }
-        
     }
-    
     ///
     /// Save Button was tapped.
     ///
@@ -280,26 +238,20 @@ class InterfaceController: WKInterfaceController {
         GPXFileManager.save(filename, gpxContents: gpxString)
         self.lastGpxFilename = filename
         //print(gpxString)
-        
         if withReset {
             self.gpxTrackingStatus = .notStarted
         }
-        
         /// Just a 'done' button, without
         let action = WKAlertAction(title: "Done", style: .default) {}
-        
         presentAlert(withTitle: NSLocalizedString("FILE_SAVED_TITLE", comment: "no comment"),
                      message: "\(filename).gpx", preferredStyle: .alert, actions: [action])
-        
     }
-    
     ///
     /// Triggered when reset button was tapped.
     ///
     /// It sets map to status .notStarted which clears the map.
     ///
     @IBAction func resetButtonTapped() {
-        
         let cancelOption = WKAlertAction(title: NSLocalizedString("CANCEL", comment: "no comment"), style: .cancel) {}
         let saveAndStartOption = WKAlertAction(title: NSLocalizedString("SAVE_START_NEW", comment: "no comment"), style: .default) {
             self.saveButtonTapped(withReset: true)
@@ -307,13 +259,11 @@ class InterfaceController: WKInterfaceController {
         let deleteOption = WKAlertAction(title: NSLocalizedString("RESET", comment: "no comment"), style: .destructive) {
             self.gpxTrackingStatus = .notStarted
         }
-        
         presentAlert(withTitle: nil,
                      message: NSLocalizedString("SELECT_OPTION", comment: "no comment"),
                      preferredStyle: .actionSheet,
                      actions: [cancelOption, saveAndStartOption, deleteOption])
     }
-
     /// returns a string with the format of current date dd-MMM-yyyy-HHmm' (20-Jun-2018-1133)
     ///
     func defaultFilename() -> String {
@@ -322,7 +272,6 @@ class InterfaceController: WKInterfaceController {
         print("fileName:" + dateFormatter.string(from: Date()))
         return dateFormatter.string(from: Date())
     }
-
     ///
     /// Checks the location services status
     /// - Are location services enabled (access to location device wide)? If not => displays an alert
@@ -342,7 +291,6 @@ class InterfaceController: WKInterfaceController {
             return
         }
     }
-    
     ///
     /// Displays an alert that informs the user that location services are disabled.
     ///
@@ -352,12 +300,10 @@ class InterfaceController: WKInterfaceController {
         let button = WKAlertAction(title: "Cancel", style: .cancel) {
             print("LocationServicesDisabledAlert: cancel pressed")
         }
-        
         presentAlert(withTitle: NSLocalizedString("LOCATION_SERVICES_DISABLED", comment: "no comment"),
                      message: NSLocalizedString("ENABLE_LOCATION_SERVICES", comment: "no comment"),
                      preferredStyle: .alert, actions: [button])
     }
-    
     ///
     /// Displays an alert that informs the user that access to location was denied for this app (other apps may have access).
     /// It also dispays a button allows the user to go to settings to activate the location.
@@ -369,32 +315,24 @@ class InterfaceController: WKInterfaceController {
         let button = WKAlertAction(title: "Cancel", style: .cancel) {
             print("LocationServicesDeniedAlert: cancel pressed")
         }
-        
         presentAlert(withTitle: NSLocalizedString("ACCESS_TO_LOCATION_DENIED", comment: "no comment"),
                      message: NSLocalizedString("ALLOW_LOCATION", comment: "no comment"),
                      preferredStyle: .alert, actions: [button])
     }
-
 }
-
 // MARK: StopWatchDelegate
-
 ///
 /// Updates the `timeLabel` with the `stopWatch` elapsedTime.
 /// In the main ViewController there is a label that holds the elapsed time, that is, the time that
 /// user has been tracking his position.
-///
 ///
 extension InterfaceController: StopWatchDelegate {
     func stopWatch(_ stropWatch: StopWatch, didUpdateElapsedTimeString elapsedTimeString: String) {
         timeLabel.setText(elapsedTimeString)
     }
 }
-
 // MARK: CLLocationManagerDelegate
-
 extension InterfaceController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error)")
         coordinatesLabel.setText(kNotGettingLocationText)
@@ -416,21 +354,16 @@ extension InterfaceController: CLLocationManagerDelegate {
         default:
             print("Default error")
         }
-        
     }
-    
     ///
     /// Updates location accuracy and map information when user is in a new position
-    ///
     ///
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //updates signal image accuracy
         let newLocation = locations.first!
-        
         let hAcc = newLocation.horizontalAccuracy
         let vAcc = newLocation.verticalAccuracy
         print("didUpdateLocation: received \(newLocation.coordinate) hAcc: \(hAcc) vAcc: \(vAcc) floor: \(newLocation.floor?.description ?? "''")")
-
         signalAccuracyLabel.setText(hAcc.toAccuracy(useImperial: preferences.useImperial))
         if hAcc < kSignalAccuracy6 {
             self.signalImageView.setImage(signalImage6)
@@ -447,17 +380,13 @@ extension InterfaceController: CLLocationManagerDelegate {
         } else {
             self.signalImageView.setImage(signalImage0)
         }
-        
         // Update coordsLabels
         let latFormat = String(format: "%.6f", newLocation.coordinate.latitude)
         let lonFormat = String(format: "%.6f", newLocation.coordinate.longitude)
-        
         coordinatesLabel.setText("\(latFormat),\(lonFormat)")
         altitudeLabel.setText(newLocation.altitude.toAltitude(useImperial: preferences.useImperial))
-        
         //Update speed (provided in m/s, but displayed in km/h)
         speedLabel.setText(newLocation.speed.toSpeed(useImperial: preferences.useImperial))
-        
         if gpxTrackingStatus == .tracking {
             print("didUpdateLocation: adding point to track (\(newLocation.coordinate.latitude),\(newLocation.coordinate.longitude))")
             map.addPointToCurrentTrackSegmentAtLocation(newLocation)
