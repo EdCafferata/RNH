@@ -1,6 +1,7 @@
 //  RnhGpxTrackerTests.swift
 //  RnhGpxTrackerTests
 //  Created by merlos on 13/09/14.
+//  Update by Ed Cafferata 2021/12/06.
 //  Copyright (c) 2014 TransitBox. All rights reserved.
 //
 import UIKit
