@@ -1,10 +1,9 @@
 /*
   InfoPlist.strings
-  OpenGpxTracker
-
+  RnhGpxTracker
   Created by Evgeniy NeoFusion on 20.06.20.
+  Update by Ed Cafferata 2021/12/06.
 */
-
 NSLocationAlwaysAndWhenInUseUsageDescription = "Геопозиция используется для отображения вашего местоположения на карте. Разрешите доступ к геопозиции «всегда» для работы в фоновом режиме";
 NSLocationAlwaysUsageDescription = "Геопозиция используется для записи GPX-треков, даже когда приложение находится в фоновом режиме";
 NSLocationUsageDescription = "Геопозиция используется для записи GPX-треков и добавления объектов (POI)";

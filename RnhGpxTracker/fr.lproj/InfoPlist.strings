@@ -1,11 +1,10 @@
 /*
   InfoPlist.strings
-  OpenGpxTracker
-
+  RnhGpxTracker
   Created by Kurt Höblinger on 21.08.19.
+  Update by Ed Cafferata 2021/12/06.
   Translated to French by Mathieu Hefti on 08.07.20.
 */
-
 NSLocationAlwaysAndWhenInUseUsageDescription = "La localisation n'est utilisée que pour afficher votre position sur la carte. Sélectionnez Toujours pour suivre votre position même lorsque l'application fonctionne en arrière-plan.";
 NSLocationAlwaysUsageDescription = "La localisation est nécessaire pour créer une trace GPX même lorsque l'application fonctionne en arrière-plan.";
 NSLocationUsageDescription = "La localisation est nécessaire pour créer des traces GPX et des points de repère";
