@@ -14,8 +14,8 @@
 		4588D66B230D23AA009AA75F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4588D66D230D23AA009AA75F /* InfoPlist.strings */; };
 		4588D66F230D2476009AA75F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4588D671230D2476009AA75F /* InfoPlist.strings */; };
 		45A430E9230D61240003C2F2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A430EB230D61240003C2F2 /* Interface.storyboard */; };
-		6E1ED1ED275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1ED1EC275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework */; };
 		6EB938AB275D5DC700DFEBB6 /* OpenGpxTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EB938A9275D5DC700DFEBB6 /* OpenGpxTracker.xcdatamodeld */; };
+		6ED85755275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED85754275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework */; };
 		8913CD8C1BDB0A9A009EC729 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913CD8B1BDB0A9A009EC729 /* PreferencesTableViewController.swift */; };
 		8913CD8E1BDB2477009EC729 /* PreferencesTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913CD8D1BDB2477009EC729 /* PreferencesTableViewControllerDelegate.swift */; };
 		893BEC8619C7E62200C77354 /* GPXWaypoint+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BEC8519C7E62200C77354 /* GPXWaypoint+MKAnnotation.swift */; };
@@ -174,6 +174,7 @@
 		6E1ED1EA275D19E800B06CBC /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1ED1EC275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB938AA275D5DC700DFEBB6 /* RnhGpxTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RnhGpxTracker.xcdatamodel; sourceTree = "<group>"; };
+		6ED85754275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DE40602499509900ED7D6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84DE40612499509900ED7D6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
 		84DE40622499509900ED7D6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -277,7 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1ED1ED275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework in Frameworks */,
+				6ED85755275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework in Frameworks */,
 				BF637D132216C5FA0003EC04 /* WatchConnectivity.framework in Frameworks */,
 				899D678419D3528D00C88A0A /* WebKit.framework in Frameworks */,
 				899D677819CF0A9F00C88A0A /* MessageUI.framework in Frameworks */,
@@ -408,6 +409,7 @@
 		898EED0119C4A16600B4B207 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ED85754275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework */,
 				6E1ED1EC275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework */,
 				6E1ED1EA275D19E800B06CBC /* Pods_RnhGpxTracker.framework */,
 				BF637D122216C5FA0003EC04 /* WatchConnectivity.framework */,

@@ -314,5 +314,4 @@ extension GPXFileTableInterfaceController: WCSessionDelegate {
                               preferredStyle: .alert, actions: [doneAction])
         }
     }
-    
 }

@@ -119,10 +119,12 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>GPS Exchange Format (GPX)</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
 			<key>UTTypeIdentifier</key>
 			<string>com.topografix.gpx</string>
 			<key>UTTypeReferenceURL</key>
-			<string>http://www.topografix.com/GPX/1/1</string>
+			<string>https://www.topografix.com/GPX/1/1</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
