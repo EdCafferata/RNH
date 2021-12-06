@@ -1,10 +1,9 @@
 /*
   InfoPlist.strings
-  OpenGpxTracker
-
+  RnhGpxTracker
   Dutch Translation by @julian08100, submitted on 12/08/2020
+  Update by Ed Cafferata 2021/12/06.
 */
-
 NSLocationAlwaysAndWhenInUseUsageDescription = "De locatie is alleen gebruikt voor het laten zien van de positie op de kaart. Selecteer altijd 'Altijd locatie delen'";
 NSLocationAlwaysUsageDescription = "De locatie is nodig voor het mane van een GPX track ook wanneer de App in de achtergrond is.";
 NSLocationUsageDescription = "De locatie is nodig voor het maken van GPX en het maken van POI's.";
