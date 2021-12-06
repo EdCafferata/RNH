@@ -1,10 +1,8 @@
-//
 //  GPXMapView.swift
-//  OpenGpxTracker
-//
+//  RnhGpxTracker
 //  Created by merlos on 24/09/14.
+//  Updated by Ed Cafferata 2021/12/06.
 //
-
 import Foundation
 import UIKit
 import MapKit
@@ -12,19 +10,16 @@ import CoreLocation
 import CoreGPX
 import CoreData
 import MapCache
-
 ///
 /// A MapView that Tracks user position
 ///
 /// - it is able to convert GPX file into map
 /// - it is able to return a GPX file from map
 ///
-///
 /// ### Some definitions
 ///
 /// 1. A **track** is a set of segments.
 /// 2. A **segment** is set of points. A segment is linked to a MKPolyline overlay in the map.
-
 /// Each time the user touches "Start Tracking" => a segment is created (currentSegment)
 /// Each time the users touches "Pause Tracking" => the segment is added to trackSegments
 /// When the user saves the file => trackSegments are consolidated in a single track that is
@@ -32,23 +27,17 @@ import MapCache
 /// If the user opens the file in a session for the second, then tracks some seg ments and saves
 /// the file again, the resulting gpx file will have two tracks.
 ///
-
 class GPXMapView: MKMapView {
-    
     /// Current session of GPX location logging. Handles all background tasks and recording.
     let session = GPXSession()
-
     /// The line being displayed on the map that corresponds to the current segment.
     var currentSegmentOverlay: MKPolyline
-    
     ///
     var extent: GPXExtentCoordinates = GPXExtentCoordinates() //extent of the GPX points and tracks
-
     ///position of the compass in the map
     ///Example:
     /// map.compassRect = CGRect(x: map.frame.width/2 - 18, y: 70, width: 36, height: 36)
     var compassRect: CGRect
-    
     /// Is the map using local image cache??
     var useCache: Bool = true { //use tile overlay cache (
         didSet {
@@ -59,11 +48,9 @@ class GPXMapView: MKMapView {
             }
         }
     }
-    
     /// Arrow image to display heading (orientation of the device)
     /// initialized on MapViewDelegate
     var headingImageView: UIImageView?
-    
     /// Selected tile server.
     /// - SeeAlso: GPXTileServer
     var tileServer: GPXTileServer = .apple {
@@ -75,7 +62,6 @@ class GPXMapView: MKMapView {
                 //to see apple maps we need to remove the overlay added by map cache.
                 removeOverlay(tileServerOverlay)
             }
-            
             //add new overlay to map if not using Apple Maps
             if newValue != .apple {
                 //Update cacheConfig
@@ -106,22 +92,16 @@ class GPXMapView: MKMapView {
             }
         }
     }
-    
     /// Overlay that holds map tiles
     var tileServerOverlay: MKTileOverlay = MKTileOverlay()
-    
     ///
     let coreDataHelper = CoreDataHelper()
-    
     /// Heading of device
     var heading: CLHeading?
-    
     /// Offset to heading due to user's map rotation
     var headingOffset: CGFloat?
-    
     /// Gesture for heading arrow to be updated in realtime during user's map interactions
     var rotationGesture = UIRotationGestureRecognizer()
-    
     ///
     /// Initializes the map with an empty currentSegmentOverlay.
     ///
@@ -130,15 +110,12 @@ class GPXMapView: MKMapView {
         currentSegmentOverlay = MKPolyline(coordinates: &tmpCoords, count: 0)
         compassRect = CGRect.init(x: 0, y: 0, width: 36, height: 36)
         super.init(coder: aDecoder)
-        
         // Rotation Gesture handling (for the map rotation's influence towards heading pointing arrow)
         rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(rotationGestureHandling(_:)))
-        
         addGestureRecognizer(rotationGesture)
         isUserInteractionEnabled = true
         isMultipleTouchEnabled = true
     }
-    
     ///
     /// Override default implementation to set the compass that appears in the map in a better position.
     ///
@@ -150,33 +127,27 @@ class GPXMapView: MKMapView {
                 compassView.frame = compassRect
             }
         }
-        
         updateMapInformation(tileServer)
     }
-    
     /// hides apple maps stuff when map tile != apple.
     func updateMapInformation(_ tileServer: GPXTileServer) {
         if let logoClass = NSClassFromString("MKAppleLogoImageView"),
            let mapLogo = subviews.filter({ $0.isKind(of: logoClass) }).first {
             mapLogo.isHidden = (tileServer != .apple)
         }
-        
         if let textClass = NSClassFromString("MKAttributionLabel"),
            let mapText = subviews.filter({ $0.isKind(of: textClass) }).first {
             mapText.isHidden = (tileServer != .apple)
         }
     }
-    
     /// Handles rotation detected from user, for heading arrow to update.
     @objc func rotationGestureHandling(_ gesture: UIRotationGestureRecognizer) {
         headingOffset = gesture.rotation
         updateHeading()
-        
         if gesture.state == .ended {
             headingOffset = nil
         }
     }
-    
     ///
     /// Adds a waypoint annotation in the point passed as arguments
     ///
@@ -192,7 +163,6 @@ class GPXMapView: MKMapView {
         coreDataHelper.add(toCoreData: waypoint)
         
     }
-    
     ///
     /// Adds a waypoint to the map.
     ///
@@ -203,7 +173,6 @@ class GPXMapView: MKMapView {
         addAnnotation(waypoint)
         extent.extendAreaToIncludeLocation(waypoint.coordinate)
     }
-    
     ///
     /// Removes a Waypoint from the map
     ///
@@ -219,27 +188,21 @@ class GPXMapView: MKMapView {
         session.waypoints.remove(at: index!)
         coreDataHelper.deleteWaypoint(fromCoreDataAt: index!)
     }
-    
     ///
     /// Updates the heading arrow based on the heading information
     ///
     func updateHeading() {
         guard let heading = heading else { return }
-        
         headingImageView?.isHidden = false
         let rotation = CGFloat((heading.trueHeading - camera.heading)/180 * Double.pi)
-        
         var newRotation = rotation
-        
         if let headingOffset = headingOffset {
             newRotation = rotation + headingOffset
         }
- 
         UIView.animate(withDuration: 0.15) {
             self.headingImageView?.transform = CGAffineTransform(rotationAngle: newRotation)
         }
     }
-    
     ///
     /// Adds a new point to current segment.
     /// - Parameters:
@@ -256,7 +219,6 @@ class GPXMapView: MKMapView {
         addOverlay(currentSegmentOverlay)
         extent.extendAreaToIncludeLocation(location.coordinate)
     }
-    
     ///
     /// If current segmet has points, it appends currentSegment to trackSegments and
     /// initializes currentSegment to a new one.
@@ -267,14 +229,12 @@ class GPXMapView: MKMapView {
             currentSegmentOverlay = MKPolyline()
         }
     }
-    
     ///
     /// Finishes current segment.
     ///
     func finishCurrentSegment() {
         startNewTrackSegment() //basically, we need to append the segment to the list of segments
     }
-    
     ///
     /// Clears map.
     ///
@@ -283,30 +243,25 @@ class GPXMapView: MKMapView {
         removeOverlays(overlays)
         removeAnnotations(annotations)
         extent = GPXExtentCoordinates()
-        
         //add tile server overlay
         //by removing all overlays, tile server overlay is also removed. We need to add it back
         if tileServer != .apple {
             addOverlay(tileServerOverlay, level: .aboveLabels)
         }
     }
-    
     ///
     ///
     /// Converts current map into a GPX String
     ///
-    ///
     func exportToGPXString() -> String {
         return session.exportToGPXString()
     }
-   
     ///
     /// Sets the map region to display all the GPX data in the map (segments and waypoints).
     ///
     func regionToGPXExtent() {
         setRegion(extent.region, animated: true)
     }
-    
     /// Imports GPX contents into the map.
     ///
     /// - Parameters:
@@ -317,7 +272,6 @@ class GPXMapView: MKMapView {
         addWaypoints(for: gpx)
         addTrackSegments(for: gpx)
     }
-
     private func addWaypoints(for gpx: GPXRoot, fromImport: Bool = true) {
         for waypoint in gpx.waypoints {
             addWaypoint(waypoint)
@@ -326,7 +280,6 @@ class GPXMapView: MKMapView {
             }
         }
     }
-
     private func addTrackSegments(for gpx: GPXRoot) {
         session.tracks = gpx.tracks
         for oneTrack in session.tracks {
@@ -342,20 +295,16 @@ class GPXMapView: MKMapView {
             }
         }
     }
-    
     func continueFromGPXRoot(_ gpx: GPXRoot) {
         clearMap()
         addWaypoints(for: gpx, fromImport: false)
-        
         session.continueFromGPXRoot(gpx)
-        
         // for last session's previous tracks, through resuming
         for oneTrack in session.tracks {
             session.totalTrackedDistance += oneTrack.length
             for segment in oneTrack.tracksegments {
                 let overlay = segment.overlay
                 addOverlay(overlay)
-                
                 let segmentTrackpoints = segment.trackpoints
                 //add point to map extent
                 for waypoint in segmentTrackpoints {
@@ -363,19 +312,15 @@ class GPXMapView: MKMapView {
                 }
             }
         }
-        
         // for last session track segment
         for trackSegment in session.trackSegments {
-            
             let overlay = trackSegment.overlay
             addOverlay(overlay)
-            
             let segmentTrackpoints = trackSegment.trackpoints
             //add point to map extent
             for waypoint in segmentTrackpoints {
                 extent.extendAreaToIncludeLocation(waypoint.coordinate)
             }
         }
-        
     }
 }

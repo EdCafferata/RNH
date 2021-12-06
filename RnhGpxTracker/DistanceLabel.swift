@@ -1,14 +1,12 @@
-//
 //  DistanceLabel.swift
-//  OpenGpxTracker
+//  RnhGpxTracker
 //
 //  Created by merlos on 01/10/15.
+//  Updated by Ed Cafferata 2021/12/06.
 //
-
 import Foundation
 import UIKit
 import MapKit
-
 ///
 /// A label to display distances.
 ///
@@ -20,13 +18,10 @@ import MapKit
 /// To update the text displayed set the `distance` property.
 ///
 open class DistanceLabel: UILabel {
-    
     /// Internal variable that keeps the actual distance
     private var _distance = 0.0
-    
     ///Internal variable to keep the use of imperial units
     private var _useImperial = false
-    
     /// Use imperial units (miles)? False by default.
     /// If true, displays meters and kilometers
     open var useImperial: Bool {
@@ -38,7 +33,6 @@ open class DistanceLabel: UILabel {
             distance = _distance //updates text displayed to reflect the new units
         }
     }
-    
     /// Distance in meters
     open var distance: CLLocationDistance {
         get {
