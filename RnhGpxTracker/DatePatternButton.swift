@@ -1,20 +1,16 @@
-//
 //  DateFieldButton.swift
-//  OpenGpxTracker
+//  RnhGpxTracker
 //
 //  Created by Vincent Neo on 17/4/20.
+//  Update  by Ed Cafferata 2021/12/06.
 //
-
 import UIKit
-
 /// Each individual button that represents a date pattern
 class DatePatternButton: UIButton {
-    
     /// DateFormatter-friendly pattern of that the button holds.
     ///
     /// such as `YYYY` or `s`
     var pattern = String()
-    
     /// For dealing with button tap highlight
     override var isSelected: Bool {
         didSet {
@@ -25,7 +21,6 @@ class DatePatternButton: UIButton {
             }
         }
     }
-    
     /// For dealing with button tap highlight
     override var isHighlighted: Bool {
         didSet {
@@ -36,5 +31,4 @@ class DatePatternButton: UIButton {
             }
         }
     }
-    
 }
