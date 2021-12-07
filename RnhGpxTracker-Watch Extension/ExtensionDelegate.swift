@@ -1,6 +1,5 @@
 //  ExtensionDelegate.swift
 //  RnhGpxTracker-Watch Extension
-
 //  Created by Vincent on 5/2/19.
 //  Update by Ed Cafferata 2021/12/06.
 //  Copyright © 2019 TransitBox. All rights reserved.
