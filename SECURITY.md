@@ -9,6 +9,7 @@ currently being supported with security updates.
 | ------- | ------------------ | ----------- |
 | 1.6.0   | :white_check_mark: | ios 8       |
 | 1.7.2   | :white_check_mark: | ios 12      |
+| 1.7.3   | :white_check_mark: | GDPR (AVG)  |
 
 ## Reporting a Vulnerability
 
