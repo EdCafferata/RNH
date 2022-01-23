@@ -1,11 +1,9 @@
 /*
  Localizable.strings
- OpenGpxTracker
- 
+ RnhGpxTracker
  Created by Kurt Höblinger on 19.08.19.
  Translated to French by Mathieu Hefti on 08.07.20.
  */
-
 // App
 "NO_LOCATION" = "Localisation inaccessible";
 "START_TRACKING" = "Démarrer le suivi";
@@ -18,21 +16,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "Fichier reçu d'Apple Watch";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Fichier reçu: \"%@\"";
 "SAVE_AS" = "Enregister sous";
-"ENTER_SESSION_NAME" = "Entrez le nom de la session GPX";
+"ENTER_SESSION_NAME" = "Entrez le nom de la session RNH";
 "LOCATION_SERVICES_DISABLED" = "Le service de localisation est désactivé";
 "ENABLE_LOCATION_SERVICES" = "Rendez-vous dans Réglages et activez la localisation.";
 "SETTINGS" = "Réglages";
 "ACCESS_TO_LOCATION_DENIED" = "Accès à la localisation refusé";
-"ALLOW_LOCATION" = "Dans les réglages de localisation, autorisez Toujours l'accès à votre position pour GPX Tracker ";
+"ALLOW_LOCATION" = "Dans les réglages de localisation, autorisez Toujours l'accès à votre position pour RNH Tracker ";
 "COORDS_LABEL" = "(%@, %@) · altitude: %@";
-"NO_FILES" = "Aucun fichier GPX";
-"YOUR_FILES" = "Vos fichiers GPX";
+"NO_FILES" = "Aucun fichier RNH";
+"YOUR_FILES" = "Vos fichiers RNH";
 "LAST_SAVED" = "Dernier enregistrement %@ (%@)";
 "DELETE" = "Supprimer";
 "SELECT_OPTION" = "Sélectionnez une option";
 "LOAD_IN_MAP" = "Charger sur la carte";
 "SHARE" = "Partager";
-"LOADING_FILE" = "Chargement du fichier GPX...";
+"LOADING_FILE" = "Chargement du fichier RNH...";
 "ABOUT" = "A propos";
 "PREFERENCES" = "Préférences";
 "UNITS" = "Unités";
@@ -52,13 +50,13 @@
 "SUCCESSFULLY_SENT" = "Envois réussis:";
 "FAILED_TO_SEND" = "Envois échoués:";
 "SEND_TO_IOS" = "Envoyer à l'application iOS";
-"FILE_SELECTED_TITLE" = "Fichiers GPX sélectionnés";
+"FILE_SELECTED_TITLE" = "Fichiers RNH sélectionnés";
 "FILE_SELECTED_MESSAGE" = "Que voulez-vous faire?";
 "ERROR_OCCURED_TITLE" = "Une erreur est survenue";
-"ERROR_OCCURED_MESSAGE" = "Le fichier GPX n'a pas pu être envoyé à l'application iOS, en raison de %s ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "Fichier GPX enregistré";
-"FILE_SAVED_MESSAGE" = "La session courante a été enregistrée sous %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "Le fichier RNH n'a pas pu être envoyé à l'application iOS, en raison de %s ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "Fichier RNH enregistré";
+"FILE_SAVED_MESSAGE" = "La session courante a été enregistrée sous %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "Automatique";
