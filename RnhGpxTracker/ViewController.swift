@@ -1,8 +1,6 @@
 //  ViewController.swift
 //  RnhGpxTracker
-//
 //  Created by merlos on 13/09/14.
-//
 //  Localized by nitricware on 19/08/19.
 //  Updated by Ed Cafferata 2021/12/06.
 //
