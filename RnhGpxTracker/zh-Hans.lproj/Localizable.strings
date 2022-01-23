@@ -2,12 +2,9 @@
  Localizable.strings
  OpenGpxTracker
  Chinese (Simplified) Translation by Vincent Neo created on 23.08.19.
- 
  Note 1: "app" can be translated/referred as "应用程序", but I've noticed that it is still commonly denoted as "app" anyway, which is what I chose to use for this.
  Note 2: As certain chinese words can be ambiguously interpreted, some words are rephrased, but should still be attributable as having the same or similar meaning.
- 
  */
-
 // App
 "NO_LOCATION" = "无法得到定位资料";
 "START_TRACKING" = "开始记录";
@@ -17,24 +14,24 @@
 "RESET" = "清零";
 "DONE" = "完成";
 "CANCEL" = "取消";
-"WATCH_FILE_RECEIVED_TITLE" = "成功收到 Apple Watch 发来的 GPX 文件";
-"WATCH_FILE_RECEIVED_MESSAGE" = "成功收到 GPX 文件: \"%@\"";
+"WATCH_FILE_RECEIVED_TITLE" = "成功收到 Apple Watch 发来的 RNH 文件";
+"WATCH_FILE_RECEIVED_MESSAGE" = "成功收到 RNH 文件: \"%@\"";
 "SAVE_AS" = "储存为...";
-"ENTER_SESSION_NAME" = "请您输入这 GPX 文件名";
+"ENTER_SESSION_NAME" = "请您输入这 RNH 文件名";
 "LOCATION_SERVICES_DISABLED" = "手机定位服务无法登入";
 "ENABLE_LOCATION_SERVICES" = "请您到 “设置” app，确保本 app 的 “定位服务” 已打开";
 "SETTINGS" = "设置";
 "ACCESS_TO_LOCATION_DENIED" = "app 定位服务不被允许登入";
 "ALLOW_LOCATION" = "在 “设置” app 里, 请您选择 “始终” 定位模式，让本 app 可以利用定位服务。本 app 需要此服务，才能完全操作。";
 "COORDS_LABEL" = "(%@, %@) · 海拔: %@";
-"NO_FILES" = "无法找到任何 GPX 文件";
-"YOUR_FILES" = "您的 GPX 文件";
+"NO_FILES" = "无法找到任何 RNH 文件";
+"YOUR_FILES" = "您的 RNH 文件";
 "LAST_SAVED" = "最后记录： %@ (%@)";
 "DELETE" = "删除";
 "SELECT_OPTION" = "请选择";
 "LOAD_IN_MAP" = "用地图显示文件资料";
 "SHARE" = "分享";
-"LOADING_FILE" = "在处理 GPX 文件中...";
+"LOADING_FILE" = "在处理 RNH 文件中...";
 "ABOUT" = "资料";
 "PREFERENCES" = "设置";
 "UNITS" = "计量单位";
@@ -54,13 +51,13 @@
 "SUCCESSFULLY_SENT" = "成功发送";
 "FAILED_TO_SEND" = "发送失败：";
 "SEND_TO_IOS" = "发送到 iOS app";
-"FILE_SELECTED_TITLE" = "GPX 文件已被选种";
+"FILE_SELECTED_TITLE" = "RNH 文件已被选种";
 "FILE_SELECTED_MESSAGE" = "请问您想怎样处理文件呢？";
 "ERROR_OCCURED_TITLE" = "差错事故";
-"ERROR_OCCURED_MESSAGE" = "很遗憾的，GPX 文件无法发送到 iOS app，因为： %s ";
-"GPX_TRACKER" = "GPX 定位记录";
-"FILE_SAVED_TITLE" = "GPX 文件储存完毕";
-"FILE_SAVED_MESSAGE" = "目前的定位记录已被储存于 %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "很遗憾的，RNH 文件无法发送到 iOS app，因为： %s ";
+"GPX_TRACKER" = "RNH 定位记录";
+"FILE_SAVED_TITLE" = "RNH 文件储存完毕";
+"FILE_SAVED_MESSAGE" = "目前的定位记录已被储存于 %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "自动设置";
