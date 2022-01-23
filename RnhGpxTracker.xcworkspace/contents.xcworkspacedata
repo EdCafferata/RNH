@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RnhGpxTracker.xcodeproj">
+      location = "group:/Users/cafferata/Xcode-Sources/iOS-RNH-Tracker/RnhGpxTracker.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:RnhGpxTracker.xcodeproj">
    </FileRef>
 </Workspace>
