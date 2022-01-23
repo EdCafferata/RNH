@@ -55,7 +55,7 @@ Created by Phiilman on 28.03.20.
 "ERROR_OCCURED_MESSAGE" = "RNH -tiedoston lähetys iOS:iin ei onnistunut: %s ";
 "GPX_TRACKER" = "RNH Tracker";
 "FILE_SAVED_TITLE" = "RNH -tiedosto tallennettu";
-"FILE_SAVED_MESSAGE" = "Tapahtuma tallennettu nimellä %s.RNH ";
+"FILE_SAVED_MESSAGE" = "Tapahtuma tallennettu nimellä %s.gpx ";
 
 // Activities
 "AT_AUTOMATIC" = "Automaattinen";
