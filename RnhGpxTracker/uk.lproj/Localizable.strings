@@ -55,7 +55,7 @@
 "ERROR_OCCURED_MESSAGE" = "Виникла помилка під час надсилання файлу RNH в додаток iOS, через %s ";
 "GPX_TRACKER" = "RNH Трекер";
 "FILE_SAVED_TITLE" = "RNH-файл збережений";
-"FILE_SAVED_MESSAGE" = "Поточний сеанс збережений як %s.RNH ";
+"FILE_SAVED_MESSAGE" = "Поточний сеанс збережений як %s.gpx ";
 
 // Activities
 "AT_AUTOMATIC" = "Автоматично";
