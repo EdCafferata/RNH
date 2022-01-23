@@ -55,7 +55,7 @@
 "ERROR_OCCURED_MESSAGE" = "Ошибка отправки RNH-файла в приложение iOS, по причине \"%s\" ";
 "GPX_TRACKER" = "RNH Tracker";
 "FILE_SAVED_TITLE" = "RNH-файл сохранен";
-"FILE_SAVED_MESSAGE" = "Текущая сессия сохранена как %s.RNH ";
+"FILE_SAVED_MESSAGE" = "Текущая сессия сохранена как %s.gpx ";
 
 // Activities
 "AT_AUTOMATIC" = "Автоматически";
