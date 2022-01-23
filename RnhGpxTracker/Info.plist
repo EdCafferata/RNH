@@ -55,7 +55,7 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Location is only used to display your position in the map. Select always allow to track your position even if the app is in background.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Location is needed to create the GPX track even when the app is in background.</string>
+	<string>Location is needed to create the RNH track even when the app is in background.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Location is needed to create GPX and add PDIs</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
