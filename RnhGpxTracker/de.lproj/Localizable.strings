@@ -3,6 +3,7 @@
  RnhGpxTracker
  Created by Kurt Höblinger on 19.08.19.
  */
+// App
 "NO_LOCATION" = "GPS nicht verfügbar";
 "START_TRACKING" = "Tracking starten";
 "PAUSE" = "Pause";
