@@ -1,10 +1,8 @@
 /*
 Localizable.strings
-OpenGpxTracker
-
+RnhGpxTracker
 Created by Phiilman on 28.03.20.
 */
-
 // App
 "NO_LOCATION" = "NEi sijaintia";
 "START_TRACKING" = "Aloita seuranta";
@@ -17,21 +15,21 @@ Created by Phiilman on 28.03.20.
 "WATCH_FILE_RECEIVED_TITLE" = "Tiedosto vastaanotettu Apple Watch";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Vastaanotettu tiedosto: \"%@\"";
 "SAVE_AS" = "Tallenna nimellä";
-"ENTER_SESSION_NAME" = "Anna GPX tapahtumalle nimi";
+"ENTER_SESSION_NAME" = "Anna RNH tapahtumalle nimi";
 "LOCATION_SERVICES_DISABLED" = "Sijainti estetty puhelimen asetuksissa.";
 "ENABLE_LOCATION_SERVICES" = "Salli sijainti puhelimen asetuksista.";
 "SETTINGS" = "Asetukset";
 "ACCESS_TO_LOCATION_DENIED" = "Access to location denied";
-"ALLOW_LOCATION" = "Vaihda puhelimen asetuksista GPX Tracker sijainti, salli aina.";
+"ALLOW_LOCATION" = "Vaihda puhelimen asetuksista RNH Tracker sijainti, salli aina.";
 "COORDS_LABEL" = "(%@, %@) · korkeus: %@";
-"NO_FILES" = "Ei GPX -tiedostoja";
-"YOUR_FILES" = "Sinun GPX tiedostosi";
+"NO_FILES" = "Ei RNH -tiedostoja";
+"YOUR_FILES" = "Sinun RNH tiedostosi";
 "LAST_SAVED" = "Viimeksi tallennettu %@ (%@)";
 "DELETE" = "Poista";
 "SELECT_OPTION" = "Valitse asetus";
 "LOAD_IN_MAP" = "Lataa kartalle";
 "SHARE" = "Jaa";
-"LOADING_FILE" = "Lataa GPX tiedostoa";
+"LOADING_FILE" = "Lataa RNH tiedostoa";
 "ABOUT" = "Tietoja";
 "PREFERENCES" = "Asetukset";
 "UNITS" = "Yksiköt";
@@ -51,13 +49,13 @@ Created by Phiilman on 28.03.20.
 "SUCCESSFULLY_SENT" = "Lähetetty:";
 "FAILED_TO_SEND" = "Lähetys epäonnistui:";
 "SEND_TO_IOS" = "Lähetä iOS:iin";
-"FILE_SELECTED_TITLE" = "GPX -tiedosto valittu";
+"FILE_SELECTED_TITLE" = "RNH -tiedosto valittu";
 "FILE_SELECTED_MESSAGE" = "Mitä haluaisit tehdä?";
 "ERROR_OCCURED_TITLE" = "Virhe tapahtunut";
-"ERROR_OCCURED_MESSAGE" = "GPX -tiedoston lähetys iOS:iin ei onnistunut: %s ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "GPX -tiedosto tallennettu";
-"FILE_SAVED_MESSAGE" = "Tapahtuma tallennettu nimellä %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "RNH -tiedoston lähetys iOS:iin ei onnistunut: %s ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "RNH -tiedosto tallennettu";
+"FILE_SAVED_MESSAGE" = "Tapahtuma tallennettu nimellä %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "Automaattinen";
