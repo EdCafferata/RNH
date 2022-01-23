@@ -1,10 +1,8 @@
 /*
  Localizable.strings
- OpenGpxTracker
-
+ RnhGpxTracker
  Created by Evgeniy NeoFusion on 20.06.20.
  */
-
 // App
 "NO_LOCATION" = "Геопозиция не получена";
 "START_TRACKING" = "Начать запись";
@@ -17,21 +15,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "Файл получен из Apple Watch";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Получен файл: \"%@\"";
 "SAVE_AS" = "Сохранить как";
-"ENTER_SESSION_NAME" = "Введите название GPX-сессии";
+"ENTER_SESSION_NAME" = "Введите название RNH-сессии";
 "LOCATION_SERVICES_DISABLED" = "Геолокация выключена";
 "ENABLE_LOCATION_SERVICES" = "Перейдите в настройки и включите геолокацию.";
 "SETTINGS" = "Параметры";
 "ACCESS_TO_LOCATION_DENIED" = "Доступ к геолокации запрещен";
-"ALLOW_LOCATION" = "В настройках геолокации разрешите GPX Tracker использоваю Вашу геопозицию";
+"ALLOW_LOCATION" = "В настройках геолокации разрешите RNH Tracker использоваю Вашу геопозицию";
 "COORDS_LABEL" = "(%@, %@) · высота: %@";
-"NO_FILES" = "Нет GPX-файлов";
-"YOUR_FILES" = "Ваши GPX-файлы";
+"NO_FILES" = "Нет RNH-файлов";
+"YOUR_FILES" = "Ваши RNH-файлы";
 "LAST_SAVED" = "Сохранен %@ (%@)";
 "DELETE" = "Удалить";
 "SELECT_OPTION" = "Выберите действие";
 "LOAD_IN_MAP" = "Показать на карте";
 "SHARE" = "Поделиться";
-"LOADING_FILE" = "Загрузка GPX-файла...";
+"LOADING_FILE" = "Загрузка RNH-файла...";
 "ABOUT" = "О программе";
 "PREFERENCES" = "Настройки";
 "UNITS" = "Единицы измерения";
@@ -51,13 +49,13 @@
 "SUCCESSFULLY_SENT" = "Успешно отправлено:";
 "FAILED_TO_SEND" = "Ошибка отправки:";
 "SEND_TO_IOS" = "Отправить в приложение iOS";
-"FILE_SELECTED_TITLE" = "GPX-файл выбран";
+"FILE_SELECTED_TITLE" = "RNH-файл выбран";
 "FILE_SELECTED_MESSAGE" = "Что вы хотите с ним сделать?";
 "ERROR_OCCURED_TITLE" = "Произошла ошибка";
-"ERROR_OCCURED_MESSAGE" = "Ошибка отправки GPX-файла в приложение iOS, по причине \"%s\" ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "GPX-файл сохранен";
-"FILE_SAVED_MESSAGE" = "Текущая сессия сохранена как %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "Ошибка отправки RNH-файла в приложение iOS, по причине \"%s\" ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "RNH-файл сохранен";
+"FILE_SAVED_MESSAGE" = "Текущая сессия сохранена как %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "Автоматически";
