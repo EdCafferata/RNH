@@ -1,38 +1,29 @@
-//
 //  PreferencesTableViewController.swift
-//  OpenGpxTracker
+//  RnhGpxTracker
 //  Created by merlos on 24/10/15.
 //  Localized by nitricware on 19/08/19.
 //  Ed Cafferata on 23/01/2022
+//
 import Foundation
 import UIKit
 import CoreLocation
 import MapCache
-
 /// Units Section Id in PreferencesTableViewController
 let kUnitsSection = 0
-
 /// Cache Section Id in PreferencesTableViewController
 let kCacheSection = 1
-
 /// Map Source Section Id in PreferencesTableViewController
 let kMapSourceSection = 2
-
 /// Activity Type Section Id in PreferencesTableViewController
 let kActivityTypeSection = 3
-
 /// Default Name Section Id in PreferencesTableViewController
 let kDefaultNameSection = 4
-
 /// Cell Id of the Use Imperial units in UnitsSection
 let kUseImperialUnitsCell = 0
-
 /// Cell Id for Use offline cache in CacheSection of PreferencesTableViewController
 let kUseOfflineCacheCell = 0
-
 /// Cell Id for Clear cache in CacheSection of PreferencesTableViewController
 let kClearCacheCell = 1
-
 ///
 /// There are two preferences available:
 ///  * use or not cache
@@ -42,19 +33,14 @@ let kClearCacheCell = 1
 /// and `kDefaultUseCache`` (Bool)
 ///
 class PreferencesTableViewController: UITableViewController, UINavigationBarDelegate {
-    
     /// Delegate for this table view controller.
     weak var delegate: PreferencesTableViewControllerDelegate?
-    
     /// Global Preferences
     var preferences: Preferences = Preferences.shared
-    
     var cache: MapCache = MapCache(withConfig: MapCacheConfig(withUrlTemplate: ""))
-    
     // Compute once, better performance for scrolling table view (reuse)
     /// Store cached size for reuse.
     var cachedSize = String()
-    
     /// Does the following:
     /// 1. Defines the areas for navBar and the Table view
     /// 2. Sets the title
@@ -65,43 +51,35 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
         //let navigationBar : UINavigationBar = UINavigationBar(frame: navBarFrame)
         self.tableView.frame = CGRect(x: navBarFrame.width + 1, y: 0, width: self.view.frame.width, height:
             self.view.frame.height - navBarFrame.height)
-        
         self.title = NSLocalizedString("PREFERENCES", comment: "no comment")
         let shareItem = UIBarButtonItem(title: NSLocalizedString("DONE", comment: "no comment"),
                                         style: UIBarButtonItem.Style.plain, target: self,
                                         action: #selector(PreferencesTableViewController.closePreferencesTableViewController))
         self.navigationItem.rightBarButtonItems = [shareItem]
-        
         let fileSize = cache.diskCache.fileSize ?? 0
         cachedSize = Int(fileSize).asFileSize()
     }
-    
     /// Close this controller.
     @objc func closePreferencesTableViewController() {
         print("closePreferencesTableViewController()")
         self.dismiss(animated: true, completion: { () -> Void in
         })
     }
-    
     /// Loads data
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
-    
     /// Does nothing for now.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     // MARK: - Table view data source
-    
     /// Returns 4 sections: Units, Cache, Map Source, Activity Type
     override func numberOfSections(in tableView: UITableView?) -> Int {
         // Return the number of sections.
         return 5
     }
-    
     /// Returns the title of the existing sections.
     /// Uses `kCacheSection`, `kUnitsSection`, `kMapSourceSection` and `kActivityTypeSection`
     /// for deciding which is the section title
@@ -115,7 +93,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
         default: fatalError("Unknown section")
         }
     }
-    
     /// For section `kCacheSection` returns 2, for `kUnitsSection` returns 1,
     /// for `kMapSourceSection` returns the number of tile servers defined in `GPXTileServer`,
     /// and for kActivityTypeSection returns `CLActivityType.count`
@@ -129,7 +106,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
         default: fatalError("Unknown section")
         }
     }
-    
     /// For `kCacheSection`:
     /// 1. If `indexPath.row` is equal to `kUserOfflineCacheCell`, returns a cell with a checkmark
     /// 2. If `indexPath.row` is equal to `kClearCacheCell`, returns a cell with a red text
@@ -144,7 +120,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
     ///
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .value1, reuseIdentifier: "MapCell")
-        
         // Units section
         if indexPath.section == kUnitsSection {
              switch indexPath.row {
@@ -157,14 +132,13 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
              default: fatalError("Unknown section")
             }
         }
-        
         // Cache Section
         if indexPath.section == kCacheSection {
             switch indexPath.row {
             case kUseOfflineCacheCell:
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CacheCell")
                 cell.textLabel?.text = NSLocalizedString("OFFLINE_CACHE", comment: "no comment")
-                
+                //
                 cell.detailTextLabel?.text = cachedSize
                 if preferences.useCache {
                     cell.accessoryType = .checkmark
@@ -176,7 +150,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
             default: fatalError("Unknown section")
             }
         }
-        
         // Map Section
         if indexPath.section == kMapSourceSection {
             //cell.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton
@@ -187,7 +160,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
                 cell.accessoryType = .checkmark
             }
         }
-        
         // Activity type section
         if indexPath.section == kActivityTypeSection {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "ActivityCell")
@@ -198,7 +170,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
                 cell.accessoryType = .checkmark
             }
         }
-        
         // Default Name section
         if indexPath.section == kDefaultNameSection {
             let dateFormatter = DefaultDateFormat()
@@ -210,10 +181,8 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
             cell.detailTextLabel?.text = dateText
             cell.accessoryType = .disclosureIndicator
         }
-        
         return cell
     }
-    
     /// Performs the following actions depending on the section and row selected:
     /// If the cell `kUseImperialUnitCell` in `kUnitsSection`it sets or unsets the use of imperial
     /// units (`useImperial` in `Preferences``and calls the delegate method `didUpdateUseImperial`.
@@ -232,7 +201,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
     /// In each case checks or unchecks the corresponding cell in the UI.
     ///
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if indexPath.section == kUnitsSection {
             switch indexPath.row {
             case kUseImperialUnitsCell:
@@ -247,7 +215,6 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
                 fatalError("didSelectRowAt: Unknown cell")
             }
         }
-        
         if indexPath.section == kCacheSection {  // 0 -> sets and unsets cache
             switch indexPath.row {
             case kUseOfflineCacheCell:
@@ -275,40 +242,30 @@ class PreferencesTableViewController: UITableViewController, UINavigationBarDele
                 fatalError("didSelectRowAt: Unknown cell")
             }
         }
-        
         if indexPath.section == kMapSourceSection { // section 1 (sets tileServerInt in defaults
             print("PreferenccesTableView Map Tile Server section Row at index:  \(indexPath.row)")
-            
             //remove checkmark from selected tile server
             let selectedTileServerIndexPath = IndexPath(row: preferences.tileServerInt, section: indexPath.section)
             tableView.cellForRow(at: selectedTileServerIndexPath)?.accessoryType = .none
-            
             //add checkmark to new tile server
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             preferences.tileServerInt = indexPath.row
-            
             //update map
             self.delegate?.didUpdateTileServer((indexPath as NSIndexPath).row)
         }
-        
         if indexPath.section == kActivityTypeSection {
             print("PreferencesTableView Activity Type section Row at index:  \(indexPath.row + 1)")
             let selected = IndexPath(row: preferences.locationActivityTypeInt - 1, section: indexPath.section)
-            
             tableView.cellForRow(at: selected)?.accessoryType = .none
-            
             //add checkmark to new tile server
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             preferences.locationActivityTypeInt = indexPath.row + 1 // +1 as activityType raw value starts at index 1
-            
             self.delegate?.didUpdateActivityType((indexPath as NSIndexPath).row + 1)
         }
-        
         if indexPath.section == kDefaultNameSection {
             print("PreferencesTableView Default Name cell clicked")
             self.navigationController?.pushViewController(DefaultNameSetupViewController(style: .grouped), animated: true)
         }
-        
         //unselect row
         tableView.deselectRow(at: indexPath, animated: true)
     }
