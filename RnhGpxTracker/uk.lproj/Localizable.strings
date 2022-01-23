@@ -1,10 +1,8 @@
 /*
  Localizable.strings
- OpenGpxTracker
-
+ RnhRNHTracker
  Originally Translated to Ukrainian by Vadim Nekhai <vadimnekhai@gmail.com> on 13 January 2020
  */
-
 // App
 "NO_LOCATION" = "Місце розташування не отримане";
 "START_TRACKING" = "Розпочати запис";
@@ -17,21 +15,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "Файл із Apple Watch отриманий";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Файл отриманий: \"%@\"";
 "SAVE_AS" = "Зберегти як";
-"ENTER_SESSION_NAME" = "Введіть назву сеансу GPX";
+"ENTER_SESSION_NAME" = "Введіть назву сеансу RNH";
 "LOCATION_SERVICES_DISABLED" = "Служба геолокації вимкнена";
 "ENABLE_LOCATION_SERVICES" = "Перейдіть до налаштувань та увімкніть геолокацію.";
 "SETTINGS" = "Налаштування";
 "ACCESS_TO_LOCATION_DENIED" = "У доступі до локації відмовлено";
-"ALLOW_LOCATION" = "У налаштуваннях місця (геолокації) дозвольте постійний доступ до локації для GPX трекера";
+"ALLOW_LOCATION" = "У налаштуваннях місця (геолокації) дозвольте постійний доступ до локації для RNH трекера";
 "COORDS_LABEL" = "(%@, %@) · Висота: %@";
-"NO_FILES" = "Немає файлів GPX";
-"YOUR_FILES" = "Ваші GPX-файли";
+"NO_FILES" = "Немає файлів RNH";
+"YOUR_FILES" = "Ваші RNH-файли";
 "LAST_SAVED" = "Останнє збереження %@ (%@)";
 "DELETE" = "Видалити";
 "SELECT_OPTION" = "Виберіть опцію";
 "LOAD_IN_MAP" = "Завантажити на мапу";
 "SHARE" = "Поширити";
-"LOADING_FILE" = "Завантаження GPX-файлу...";
+"LOADING_FILE" = "Завантаження RNH-файлу...";
 "ABOUT" = "Про програму";
 "PREFERENCES" = "Налаштування";
 "UNITS" = "Одиниці вимірювання";
@@ -51,13 +49,13 @@
 "SUCCESSFULLY_SENT" = "Успішно надіслано:";
 "FAILED_TO_SEND" = "Не вдалося надіслати:";
 "SEND_TO_IOS" = "Надіслати в додаток iOS";
-"FILE_SELECTED_TITLE" = "GPX файл вибраний";
+"FILE_SELECTED_TITLE" = "RNH файл вибраний";
 "FILE_SELECTED_MESSAGE" = "Що ви бажаєте зробити?";
 "ERROR_OCCURED_TITLE" = "Виникла помилка";
-"ERROR_OCCURED_MESSAGE" = "Виникла помилка під час надсилання файлу GPX в додаток iOS, через %s ";
-"GPX_TRACKER" = "GPX Трекер";
-"FILE_SAVED_TITLE" = "GPX-файл збережений";
-"FILE_SAVED_MESSAGE" = "Поточний сеанс збережений як %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "Виникла помилка під час надсилання файлу RNH в додаток iOS, через %s ";
+"GPX_TRACKER" = "RNH Трекер";
+"FILE_SAVED_TITLE" = "RNH-файл збережений";
+"FILE_SAVED_MESSAGE" = "Поточний сеанс збережений як %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "Автоматично";
