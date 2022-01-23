@@ -57,7 +57,7 @@
 "ERROR_OCCURED_MESSAGE" = "很遗憾的，RNH 文件无法发送到 iOS app，因为： %s ";
 "GPX_TRACKER" = "RNH 定位记录";
 "FILE_SAVED_TITLE" = "RNH 文件储存完毕";
-"FILE_SAVED_MESSAGE" = "目前的定位记录已被储存于 %s.RNH ";
+"FILE_SAVED_MESSAGE" = "目前的定位记录已被储存于 %s.gpx ";
 
 // Activities
 "AT_AUTOMATIC" = "自动设置";
