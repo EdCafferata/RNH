@@ -1,6 +1,5 @@
 //  DateFieldTypeView.swift
 //  RnhGpxTracker
-//
 //  Created by Vincent Neo on 15/4/20.
 //  Updated by Ed Cafferata 2021/12/06.
 import UIKit

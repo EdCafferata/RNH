@@ -1,6 +1,5 @@
 //  DateFieldButton.swift
 //  RnhGpxTracker
-//
 //  Created by Vincent Neo on 17/4/20.
 //  Update  by Ed Cafferata 2021/12/06.
 //

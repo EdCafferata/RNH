@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,7 +67,7 @@
 		BF692F6B2209AAFB00F8A0F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF692F6A2209AAFB00F8A0F1 /* ExtensionDelegate.swift */; };
 		BF692F6D2209AAFB00F8A0F1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF692F6C2209AAFB00F8A0F1 /* ComplicationController.swift */; };
 		BF692F6F2209AAFC00F8A0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF692F6E2209AAFC00F8A0F1 /* Assets.xcassets */; };
-		BF692F732209AAFC00F8A0F1 /* RnhGpxTracker-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BF692F572209AAF900F8A0F1 /* RnhGpxTracker-Watch.app */; };
+		BF692F732209AAFC00F8A0F1 /* RnhGpxTracker-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BF692F572209AAF900F8A0F1 /* RnhGpxTracker-Watch.app */; platformFilter = ios; };
 		BF692F7E2209B36900F8A0F1 /* GPXWaypoint+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BEC8519C7E62200C77354 /* GPXWaypoint+MKAnnotation.swift */; };
 		BF692F802209B80300F8A0F1 /* GPXTrackPoint+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D676D19CD9FAF00C88A0A /* GPXTrackPoint+MapKit.swift */; };
 		BF692F812209B80700F8A0F1 /* GPXFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899D676F19CE024600C88A0A /* GPXFileManager.swift */; };
@@ -173,6 +173,7 @@
 		554D2ACAA71E64B3A7B1A167 /* Pods-RnhGpxTracker-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnhGpxTracker-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RnhGpxTracker-Watch Extension/Pods-RnhGpxTracker-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6E1ED1EA275D19E800B06CBC /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1ED1EC275D1ABF00B06CBC /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E9791A2275FFCEA00B566A3 /* RnhGpxTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RnhGpxTracker.entitlements; sourceTree = "<group>"; };
 		6EB938AA275D5DC700DFEBB6 /* RnhGpxTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RnhGpxTracker.xcdatamodel; sourceTree = "<group>"; };
 		6ED85754275EB7CA00B13CA4 /* Pods_RnhGpxTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RnhGpxTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DE40602499509900ED7D6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -369,6 +370,7 @@
 		898EECD719C49B5800B4B207 /* RnhGpxTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6E9791A2275FFCEA00B566A3 /* RnhGpxTracker.entitlements */,
 				6EB938A9275D5DC700DFEBB6 /* OpenGpxTracker.xcdatamodeld */,
 				899D678019D2373600C88A0A /* Views */,
 				899D677919D0CAF400C88A0A /* Controllers */,
@@ -907,6 +909,7 @@
 		};
 		BF692F722209AAFC00F8A0F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = BF692F562209AAF900F8A0F1 /* RnhGpxTracker-Watch */;
 			targetProxy = BF692F712209AAFC00F8A0F1 /* PBXContainerItemProxy */;
 		};
@@ -1105,7 +1108,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1118,15 +1122,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = RnhGpxTracker/RnhGpxTracker.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9J2S23WJH3;
 				INFOPLIST_FILE = RnhGpxTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.7.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.cafferata.RnhGpxTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = RnhGpxTracker/ObjectiveCBridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1140,15 +1149,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = RnhGpxTracker/RnhGpxTracker.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9J2S23WJH3;
 				INFOPLIST_FILE = RnhGpxTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.7.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.cafferata.RnhGpxTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = RnhGpxTracker/ObjectiveCBridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1169,7 +1183,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = RnhGpxTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.transitbox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1187,7 +1205,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = RnhGpxTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.transitbox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1274,7 +1296,11 @@
 				DEVELOPMENT_TEAM = 9J2S23WJH3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "RnhGpxTracker-Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.7.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1306,7 +1332,11 @@
 				DEVELOPMENT_TEAM = 9J2S23WJH3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "RnhGpxTracker-Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.7.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = info.cafferata.RnhGpxTracker.watchkitapp.extension;

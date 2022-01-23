@@ -1,6 +1,5 @@
 //  DistanceLabel.swift
 //  RnhGpxTracker
-//
 //  Created by merlos on 01/10/15.
 //  Updated by Ed Cafferata 2021/12/06.
 //

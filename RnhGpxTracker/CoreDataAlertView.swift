@@ -1,6 +1,5 @@
 //  CoreDataAlertView.swift
 //  RnhGpxTracker
-//
 //  Created by Vincent on 25/6/19.
 //  Updated by Ed Cafferata 2021/12/06.
 //

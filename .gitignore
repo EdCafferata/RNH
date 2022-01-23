@@ -15,6 +15,12 @@ DerivedData
 *.ipa
 *.xcuserstate
 Pods/
+<<<<<<< HEAD
 Carthage/Checkouts
 Carthage/Build
 .DS*
+=======
+Carthage/
+*.DS*
+
+>>>>>>> b115f3a42706d7922ca44cf18931e633991ab1d9
