@@ -55,7 +55,7 @@
 "ERROR_OCCURED_MESSAGE" = "RNH Datei wurde nicht an iOS App gesendet: %s ";
 "GPX_TRACKER" = "RNH Tracker";
 "FILE_SAVED_TITLE" = "RNH Datei gespeichert";
-"FILE_SAVED_MESSAGE" = "Aktuelle Sitzung als %s.RNH gespeichert ";
+"FILE_SAVED_MESSAGE" = "Aktuelle Sitzung als %s.gpx gespeichert ";
 
 "AT_AUTOMATIC" = "Automatisch";
 "AT_AUTOMOTIVE" = "Fahrzeugnavigation";
