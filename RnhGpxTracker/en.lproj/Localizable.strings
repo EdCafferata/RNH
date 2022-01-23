@@ -3,7 +3,6 @@
  RnhGpxTracker.
  Created by Kurt Höblinger on 19.08.19.
  */
-
 // App
 "NO_LOCATION" = "Not getting location";
 "START_TRACKING" = "Start Tracking";
@@ -16,21 +15,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "File Received from Apple Watch";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Received file: \"%@\"";
 "SAVE_AS" = "Save as";
-"ENTER_SESSION_NAME" = "Enter GPX session name";
+"ENTER_SESSION_NAME" = "Enter RNH session name";
 "LOCATION_SERVICES_DISABLED" = "Location services disabled";
 "ENABLE_LOCATION_SERVICES" = "Go to settings and enable location.";
 "SETTINGS" = "Settings";
 "ACCESS_TO_LOCATION_DENIED" = "Access to location denied";
-"ALLOW_LOCATION" = "On Location settings, allow always access to location for GPX Tracker ";
+"ALLOW_LOCATION" = "On Location settings, allow always access to location for RNH Tracker ";
 "COORDS_LABEL" = "(%@, %@) · altitude: %@";
-"NO_FILES" = "No GPX files";
-"YOUR_FILES" = "Your GPX files";
+"NO_FILES" = "No RNH files";
+"YOUR_FILES" = "Your RNH files";
 "LAST_SAVED" = "Last saved %@ (%@)";
 "DELETE" = "Delete";
 "SELECT_OPTION" = "Select option";
 "LOAD_IN_MAP" = "Load in map";
 "SHARE" = "Share";
-"LOADING_FILE" = "Loading GPX File...";
+"LOADING_FILE" = "Loading RNH File...";
 "ABOUT" = "About";
 "PREFERENCES" = "Preferences";
 "UNITS" = "Units";
@@ -50,13 +49,13 @@
 "SUCCESSFULLY_SENT" = "Successfully sent:";
 "FAILED_TO_SEND" = "Failed to send:";
 "SEND_TO_IOS" = "Send to iOS app";
-"FILE_SELECTED_TITLE" = "GPX file selected";
+"FILE_SELECTED_TITLE" = "RNH file selected";
 "FILE_SELECTED_MESSAGE" = "What would you like to do?";
 "ERROR_OCCURED_TITLE" = "Error occured";
-"ERROR_OCCURED_MESSAGE" = "GPX file was unsuccessfully sent to iOS app, due to %s ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "GPX file saved";
-"FILE_SAVED_MESSAGE" = "Current session saved as %s.gpx ";
+"ERROR_OCCURED_MESSAGE" = "RNH file was unsuccessfully sent to iOS app, due to %s ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "RNH file saved";
+"FILE_SAVED_MESSAGE" = "Current session saved as %s.RNH ";
 
 // Activities
 "AT_AUTOMATIC" = "Automatic";
