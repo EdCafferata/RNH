@@ -1,9 +1,8 @@
 /*
  Localizable.strings
- OpenGpxTracker
+ RnhGpxTracker
  Created by Kurt Höblinger on 19.08.19.
  */
-
 "NO_LOCATION" = "GPS nicht verfügbar";
 "START_TRACKING" = "Tracking starten";
 "PAUSE" = "Pause";
@@ -15,21 +14,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "Datei von der Apple Watch erhalten.";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Datei erhalten: \"%@\"";
 "SAVE_AS" = "Speichern unter";
-"ENTER_SESSION_NAME" = "GPX Sitzungs-Name eingeben";
+"ENTER_SESSION_NAME" = "RNH Sitzungs-Name eingeben";
 "LOCATION_SERVICES_DISABLED" = "Ortungsdienste ausgeschalten";
 "ENABLE_LOCATION_SERVICES" = "Gehe in die Einstellungen und schalte die Ortungsdienste ein.";
 "SETTINGS" = "Einstellungen";
 "ACCESS_TO_LOCATION_DENIED" = "Zugriff auf Standort verweigert.";
-"ALLOW_LOCATION" = "Erlaube GPX Tracker immer den Zugriff auf den Standort in den Einstellungen. ";
+"ALLOW_LOCATION" = "Erlaube RNH Tracker immer den Zugriff auf den Standort in den Einstellungen. ";
 "COORDS_LABEL" = "(%@, %@) · Höhe: %@";
-"NO_FILES" = "Keine GPX Dateien";
-"YOUR_FILES" = "Deine GPX Dateien";
+"NO_FILES" = "Keine RNH Dateien";
+"YOUR_FILES" = "Deine RNH Dateien";
 "LAST_SAVED" = "%@ (%@) zuletzt gespeichert";
 "DELETE" = "Löschen";
 "SELECT_OPTION" = "Auswählen";
 "LOAD_IN_MAP" = "In Karte laden";
 "SHARE" = "Teilen";
-"LOADING_FILE" = "Lade GPX Datei...";
+"LOADING_FILE" = "Lade RNH Datei...";
 "ABOUT" = "Über";
 "PREFERENCES" = "Einstellungen";
 "UNITS" = "Einheiten";
@@ -49,13 +48,13 @@
 "SUCCESSFULLY_SENT" = "Erfolgreich gesendet:";
 "FAILED_TO_SEND" = "Senden fehlgeschlagen:";
 "SEND_TO_IOS" = "Sende an iOS App";
-"FILE_SELECTED_TITLE" = "GPX Datei ausgewählt";
+"FILE_SELECTED_TITLE" = "RNH Datei ausgewählt";
 "FILE_SELECTED_MESSAGE" = "Was möchtest Du tun?";
 "ERROR_OCCURED_TITLE" = "Fehler aufgetreten";
-"ERROR_OCCURED_MESSAGE" = "GPX Datei wurde nicht an iOS App gesendet: %s ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "GPX Datei gespeichert";
-"FILE_SAVED_MESSAGE" = "Aktuelle Sitzung als %s.gpx gespeichert ";
+"ERROR_OCCURED_MESSAGE" = "RNH Datei wurde nicht an iOS App gesendet: %s ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "RNH Datei gespeichert";
+"FILE_SAVED_MESSAGE" = "Aktuelle Sitzung als %s.RNH gespeichert ";
 
 "AT_AUTOMATIC" = "Automatisch";
 "AT_AUTOMOTIVE" = "Fahrzeugnavigation";
