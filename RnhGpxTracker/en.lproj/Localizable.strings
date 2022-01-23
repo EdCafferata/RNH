@@ -55,7 +55,7 @@
 "ERROR_OCCURED_MESSAGE" = "RNH file was unsuccessfully sent to iOS app, due to %s ";
 "GPX_TRACKER" = "RNH Tracker";
 "FILE_SAVED_TITLE" = "RNH file saved";
-"FILE_SAVED_MESSAGE" = "Current session saved as %s.RNH ";
+"FILE_SAVED_MESSAGE" = "Current session saved as %s.gpx ";
 
 // Activities
 "AT_AUTOMATIC" = "Automatic";
