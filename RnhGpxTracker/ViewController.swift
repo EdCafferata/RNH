@@ -413,7 +413,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // timeLabel.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
         map.addSubview(currentSegmentDistanceLabel)
         // about button.
-        aboutButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 42 + 5 + iPhoneXdiff, width: 32, height: 32)
+        aboutButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 47 + 5 + iPhoneXdiff, width: 32, height: 32)
         aboutButton.setImage(UIImage(named: "info"), for: UIControl.State())
         aboutButton.setImage(UIImage(named: "info_high"), for: .highlighted)
         aboutButton.addTarget(self, action: #selector(ViewController.openAboutViewController), for: .touchUpInside)
@@ -422,7 +422,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // aboutButton.layer.cornerRadius = 24.
         map.addSubview(aboutButton)
         // Preferences button.
-        preferencesButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 74 + 8  + iPhoneXdiff, width: 32, height: 32)
+        preferencesButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 84 + 8  + iPhoneXdiff, width: 32, height: 32)
         preferencesButton.setImage(UIImage(named: "prefs"), for: UIControl.State())
         preferencesButton.setImage(UIImage(named: "prefs_high"), for: .highlighted)
         preferencesButton.addTarget(self, action: #selector(ViewController.openPreferencesTableViewController), for: .touchUpInside)
@@ -431,7 +431,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // aboutButton.layer.cornerRadius = 24.
         map.addSubview(preferencesButton)
         // Share button.
-        shareButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 108 + 8  + iPhoneXdiff, width: 32, height: 32)
+        shareButton.frame = CGRect(x: 5 + 8, y: 14 + 5 + 128 + 8  + iPhoneXdiff, width: 32, height: 32)
         shareButton.setImage(UIImage(named: "share"), for: UIControl.State())
         shareButton.setImage(UIImage(named: "share_high"), for: .highlighted)
         shareButton.addTarget(self, action: #selector(ViewController.openShare), for: .touchUpInside)
