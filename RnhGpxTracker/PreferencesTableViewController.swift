@@ -1,12 +1,9 @@
 //
 //  PreferencesTableViewController.swift
 //  OpenGpxTracker
-//
 //  Created by merlos on 24/10/15.
-//
 //  Localized by nitricware on 19/08/19.
-//
-
+//  Ed Cafferata on 23/01/2022
 import Foundation
 import UIKit
 import CoreLocation

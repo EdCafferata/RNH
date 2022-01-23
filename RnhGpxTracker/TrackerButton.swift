@@ -1,10 +1,11 @@
+//  TrackerButton.swift
+//  RnhGpxTracker
+//  Updated by Ed Cafferata 2021/12/06.
+//
 import UIKit
-/// Creates a button with rounded corners.
-///
-/// If the width and height are same, it is a circle.
-///
-/// By default a white background color is assigned.
-///
+// Creates a button with rounded corners.
+// If the width and height are same, it is a circle.
+// By default a white background color is assigned.
 class TrackerButton: UIButton {
     /// Just call `super()` and sets background color as white
     required init?(coder aDecoder: NSCoder) {
