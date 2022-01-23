@@ -15,21 +15,21 @@
 "WATCH_FILE_RECEIVED_TITLE" = "Bestand ontvangen van Apple Watch";
 "WATCH_FILE_RECEIVED_MESSAGE" = "Bestand ontvangen: \"%@\"";
 "SAVE_AS" = "Opslaan als";
-"ENTER_SESSION_NAME" = "Voer de naam van het GPX bestand in";
+"ENTER_SESSION_NAME" = "Voer de naam van het RNH bestand in";
 "LOCATION_SERVICES_DISABLED" = "Locatievoorzieningen uitgeschakeld";
 "ENABLE_LOCATION_SERVICES" = "Ga naar instellingen en schakel locatievoorzieningen in.";
 "SETTINGS" = "Settings";
 "ACCESS_TO_LOCATION_DENIED" = "Geen toegang tot locatie";
-"ALLOW_LOCATION" = "Bij locatievoorzieningen, sta locatie altijd toe bij GPX tracker";
+"ALLOW_LOCATION" = "Bij locatievoorzieningen, sta locatie altijd toe bij RNH tracker";
 "COORDS_LABEL" = "(%@, %@) · altitude: %@";
-"NO_FILES" = "Geen GPX bestanden";
-"YOUR_FILES" = "Jouw GPX bestanden";
+"NO_FILES" = "Geen RNH bestanden";
+"YOUR_FILES" = "Jouw RNH bestanden";
 "LAST_SAVED" = "Laatst opgeslagen %@ (%@)";
 "DELETE" = "Verwijderen";
 "SELECT_OPTION" = "Selecteer optie";
 "LOAD_IN_MAP" = "Laad in kaart";
 "SHARE" = "Delen";
-"LOADING_FILE" = "GPX bestand aan het laden...";
+"LOADING_FILE" = "RNH bestand aan het laden...";
 "ABOUT" = "Over";
 "PREFERENCES" = "Voorkeuren";
 "UNITS" = "Eenheden";
@@ -49,12 +49,12 @@
 "SUCCESSFULLY_SENT" = "Succesvol verstuurd:";
 "FAILED_TO_SEND" = "Versturen mislukt:";
 "SEND_TO_IOS" = "Versturen naar iOS app";
-"FILE_SELECTED_TITLE" = "GPX bestand geselecteerd";
+"FILE_SELECTED_TITLE" = "RNH bestand geselecteerd";
 "FILE_SELECTED_MESSAGE" = "Wat wil je graag doen?";
 "ERROR_OCCURED_TITLE" = "Error";
-"ERROR_OCCURED_MESSAGE" = "GPX bestand was succesvol verstuurd naar iOS App, door middel van %s ";
-"GPX_TRACKER" = "GPX Tracker";
-"FILE_SAVED_TITLE" = "GPX bestand opgeslagen";
+"ERROR_OCCURED_MESSAGE" = "RNH bestand was succesvol verstuurd naar iOS App, door middel van %s ";
+"GPX_TRACKER" = "RNH Tracker";
+"FILE_SAVED_TITLE" = "RNH bestand opgeslagen";
 "FILE_SAVED_MESSAGE" = "Huidige sessie opgeslagen als %s.gpx ";
 
 // Activities
